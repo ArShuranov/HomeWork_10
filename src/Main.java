@@ -12,7 +12,7 @@ public class Main {
 
         System.out.println();
         System.out.println("Задание № 3 доставка");
-        timeToDelivery(99);
+        System.out.println(timeToDelivery(99));
 
 
     }
@@ -20,7 +20,9 @@ public class Main {
     public static void chekLeapYear(int year) {
         if ((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0))) {
             System.out.println(year + " год високосный");
-        } else System.out.println(year + " год невисокосный");
+        } else {
+            System.out.println(year + " год невисокосный");
+        }
     }
 
     public static void versionApplication(String typeOs, int year) {
@@ -37,8 +39,9 @@ public class Main {
 
     }
 
-    public static void timeToDelivery(int deliveryDistance) {
+    public static String timeToDelivery(int deliveryDistance) {
         int countDays = 1;
+        String result;
 
         if (deliveryDistance > 20) {
             countDays++;
@@ -52,8 +55,11 @@ public class Main {
         }
 
         if (countDays != 0) {
-            System.out.println("Потребуется дней: " + countDays);
-        } else System.out.println("Доставки нет");
+            result = "Потребуется дней: " + countDays;
+        } else {
+            result = "Доставки нет";
+        }
+        return result;
 
     }
 }
